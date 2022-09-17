@@ -11,12 +11,6 @@ node -v
 # v16.17.0
 ```
 
-## ディレクトリを作成
-
-```bash
-mkdir hello-cdk && cd hello-cdk
-```
-
 ## TypeScript セットアップ
 
 npm を実行してプロジェクトを作成する。
@@ -38,11 +32,55 @@ npm install -g aws-cdk
 TypeScript用のAWS CDKをセットアップする。
 
 ```bash
-cdk init app --language typescript
+cdk init sample-app --language typescript
 ```
 
 Python用のAWS CDKをセットアップする。
 
 ```bash
-cdk init app --language python
+cdk init sample-app --language python
+```
+
+## AWS CDKの使い方
+
+CDKのスタック一覧を表示する。
+
+```bash
+cdk ls
+```
+
+### VPCの定義を追加する
+
+```ts
+import * as ec2 from 'aws-lib/aws-ec2';
+```
+
+### S3バケットの定義を追加する
+
+```bash
+cdk synth --output ./output
+```
+
+### CloudFormation テンプレートを出力する
+
+```bash
+cdk synth > template.yml
+```
+
+### デプロイ用バケットの作成
+
+```bash
+cdk bootstrap --profile XXXX
+```
+
+### デプロイ
+
+```bash
+cdk deploy --profile XXXX
+```
+
+### リソースの削除
+
+```bash
+cdk destroy --profile XXXX
 ```
