@@ -13,7 +13,7 @@ node -v
 
 ## TypeScript セットアップ
 
-npm を実行してプロジェクトを作成する。
+TypeScriptをインストールする。
 
 ```bash
 npm install -g typescript
